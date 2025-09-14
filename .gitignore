@@ -1,0 +1,136 @@
+# =======================================
+# Unity specific ignores
+# =======================================
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Unity generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Oo]bj/
+MemoryCaptures/
+
+# Cache folders
+UserSettings/
+Assets/AssetStoreTools*
+
+# Unity crash reports
+sysinfo.txt
+
+# =======================================
+# Visual Studio / JetBrains Rider
+# =======================================
+.vscode/
+.vs/
+.idea/
+*.sln
+*.csproj
+*.unityproj
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+
+# =======================================
+# Build artifacts
+# =======================================
+*.apk
+*.unitypackage
+*.app
+*.exe
+*.dll
+*.mp4
+*.zip
+
+# =======================================
+# Unity Asset meta files
+# =======================================
+# Keep .meta files for Assets folder!
+# DO NOT IGNORE .meta inside Assets
+# Meta files are critical for Unity to keep references
+
+# Ignore meta files outside Assets
+!Assets/**/*.meta
+
+# =======================================
+# Addressable Assets & Cache
+# =======================================
+/Assets/StreamingAssets/
+*/AddressableAssetsData/*
+/ServerData/
+
+# =======================================
+# TextMesh Pro auto-generated files
+# =======================================
+/Assets/TextMesh Pro/Sprites/
+/Assets/TextMesh Pro/Fonts/
+
+# =======================================
+# Crash Reports & Debugging
+# =======================================
+*.stacktrace
+*.dmp
+
+# =======================================
+# Logs
+# =======================================
+*.log
+
+# =======================================
+# Temporary generated files by Unity
+# =======================================
+*.unitypackage
+*.unityproj
+
+# =======================================
+# Android / iOS build folders
+# =======================================
+/Assets/Plugins/Android/
+.gradle/
+.gradle-cache/
+/build/
+*/gradle.properties
+local.properties
+
+# =======================================
+# Rider & JetBrains specific
+# =======================================
+.idea/
+*.sln.iml
+
+# =======================================
+# Mac OS specific
+# =======================================
+*.DS_Store
+
+# =======================================
+# Windows specific
+# =======================================
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# =======================================
+# Unity Collaborate
+# =======================================
+/Collab/
+
+# =======================================
+# XR / VR Plugins (Meta, OpenXR, Oculus etc.)
+# =======================================
+/Assets/Oculus/VR/Editor/OVRBuildConfig.asset
+/Assets/Oculus/VR/Editor/OVRSettings.asset
+/Assets/Oculus/VR/Editor/OVRManager.asset
+
+# =======================================
+# Final Builds
+# =======================================
+/Builds/
+/Build/

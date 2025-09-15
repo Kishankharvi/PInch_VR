@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Pinch1.unity
+    guid: 303a461bff2c8ae4fae8605573921cba
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 5c53e3ffcf021ea4b8ab3e7bed409a67, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 751981a6859ed4948823aeb64c4e657a, type: 2}

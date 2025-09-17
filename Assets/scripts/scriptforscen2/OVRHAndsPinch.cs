@@ -2,9 +2,10 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using Oculus.Interaction.Input;
-using Meta.XR.ImmersiveDebugger.UserInterface.Generic; // Correct namespace for OVRHand
-using UnityEngine.UI; // Add this for Slider
+// using Oculus.Interaction.Input;
+// using Meta.XR.ImmersiveDebugger.UserInterface.Generic; // Correct namespace for OVRHand
+// using UnityEngine.UI; // Add this for Slider
+
 
 
 /// <summary>

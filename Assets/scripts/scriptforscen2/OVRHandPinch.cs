@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Meta.XR.ImmersiveDebugger.UserInterface.Generic;
 
 [Serializable]
 public class FingerPinchEventt : UnityEvent<OVRHand, int, float> { } // hand, fingerIndex, strength

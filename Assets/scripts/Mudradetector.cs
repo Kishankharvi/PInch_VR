@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections.Generic;
 
 public class MudraDetector : MonoBehaviour
 {
@@ -10,7 +11,15 @@ public class MudraDetector : MonoBehaviour
     public class MudraEvent : UnityEvent<string> { }
     public MudraEvent OnMudraDetected;
 
-    private string currentMudra = "None";
+    // Use a Dictionary to track the mudra state for each hand separately
+    private Dictionary<OVRHand, string> currentMudras = new Dictionary<OVRHand, string>();
+
+    void Start()
+    {
+        // Initialize the state for both hands
+        if (leftHand != null) currentMudras[leftHand] = "None";
+        if (rightHand != null) currentMudras[rightHand] = "None";
+    }
 
     void Update()
     {
@@ -20,20 +29,30 @@ public class MudraDetector : MonoBehaviour
 
     void DetectMudra(OVRHand hand, string side)
     {
-        if (hand == null) return;
+        if (hand == null || !hand.IsTracked) return;
 
-        // Example Mudra: Surya Mudra - Thumb + Ring
-        bool isThumb = hand.GetFingerIsPinching(OVRHand.HandFinger.Thumb);
-        bool isRing = hand.GetFingerIsPinching(OVRHand.HandFinger.Ring);
+        // Ensure the hand is initialized in the dictionary
+        if (!currentMudras.ContainsKey(hand)) currentMudras[hand] = "None";
 
         string detectedMudra = "None";
-        if (isThumb && isRing)
-            detectedMudra = "Surya Mudra";
+        
+        // Example Mudra: Surya Mudra - Thumb + Ring
+        bool isThumbPinching = hand.GetFingerIsPinching(OVRHand.HandFinger.Thumb);
+        bool isRingPinching = hand.GetFingerIsPinching(OVRHand.HandFinger.Ring);
 
-        if (detectedMudra != currentMudra)
+        if (isThumbPinching && isRingPinching)
         {
-            currentMudra = detectedMudra;
-            OnMudraDetected.Invoke(side + ": " + currentMudra);
+            detectedMudra = "Surya Mudra";
+        }
+        
+        // Add other mudra detection logic here...
+        // else if (isThumbPinching && isIndexPinching) { detectedMudra = "Jnana Mudra"; }
+
+        // Check if the state for THIS SPECIFIC HAND has changed
+        if (detectedMudra != currentMudras[hand])
+        {
+            currentMudras[hand] = detectedMudra;
+            OnMudraDetected.Invoke(side + ": " + currentMudras[hand]);
         }
     }
 }
